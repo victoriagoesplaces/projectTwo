@@ -1,3 +1,115 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body{
+  background-image: url("./../images/workout.png");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.mainPage{
+  text-align: center;
+  position: relative;
+  margin-top: 15%;
+}
+
+h1{
+  color:#ffe479;
+  /* font-weight: bolder; */
+  font-size: 400%;
+}
+
+/* signup and log in buttons */
+.button {
+  background-color: rgba(255, 71, 15, 0.1);
+  background-image: none;
+  border-image: linear-gradient(to right,  #ffe479, #ffe479);
+  border-image-slice: 1;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  color: #ffe479;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 1.25em 2em;
+  margin-left: 2%;
+  text-shadow: none;
+  transition-property: box-shadow, transform;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffe479;
+}
+
+.button:hover {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.02) translateY(-4px);
+  color:  #ffe479;
+}
+
+.button:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  transform: scale(0.98) translateY(-2px);
+}
+
+/* 404 Page */
+.jumbotron {
+  background-color:rgba(0, 0, 0, 0.219);
+}
+
+a:hover{
+  color:  #ffe479;
+}
+
+/* InputBox */
+label{
+  color:  #ffe479;
+  font-size: 100%;
+}
+
+p{
+  color: white;
+  font-size: 120%;
+  text-align: center;
+}
+
+/* survey */
+h2 {
+  color:  #ffe479;
+  text-align: center;
+}
+h3 {
+  color: #ffe479;
+  font-size: 120%;
+}
+
+h5 {
+  color: white;
+  font-size: 120%;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+/* Survey */
+.form-control {
+color: #ffe479;
+background-color:  #07070711;
+}
+
+/* footer */
+
