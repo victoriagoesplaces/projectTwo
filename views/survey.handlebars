@@ -1,127 +1,133 @@
 <div class="container">
     <div class="jumbotron">
-    <h2>Survey Questions</h2>
+        <h2>Survey Questions</h2>
 
-    <h4>About You</h4>
-    <!-- //Following infomation is required. -->
-    <h3>Name </h3>
-    <input type="text" id="name" class="form-control" required>
-    <h3>Age</h3>
-    <input type="text" id="age" class="form-control" required>
-    <h3>Email </h3>
-    <input type="text" id="email" class="form-control" required>
-    <h3>Link to Photo </h3>
-    <input type="text" id="photo" class="form-control" required>
-    <h3>Zip Code </h3>
-    <input type="text" id="zipcode" class="form-control" required>
+        <h4>About You</h4>
+        <!-- //Following infomation is required. -->
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h3>Name </h3>
+                <input type="text" id="name" class="form-control" required>
+                <h3>Age</h3>
+                <input type="text" id="age" class="form-control" required>
+                <h3>Email </h3>
+                <input type="text" id="email" class="form-control" required>
+                <h3>Link to Photo </h3>
+                <input type="text" id="photo" class="form-control" required>
+                <h3>Zip Code </h3>
+                <input type="text" id="zipcode" class="form-control" required>
+            </div>
+        </div>
 
-    <h3>Question 1</h3>
-    <h5>At which Gym do you have a membership?</h5>
-    <select data-placeholder="" class="chosen-select" id="q1">
-        <option value=""></option>
-        <option value="1">Planet Fitness</option>
-        <option value="2">Anytime Fitness</option>
-        <option value="3">LA Fitness</option>
-        <option value="3"> I don't have a membership</option>
-    </select>
+            <h3>Question 1</h3>
+            <h5>At which Gym do you have a membership?</h5>
+            <select data-placeholder="" class="chosen-select" id="q1">
+                <option value=""></option>
+                <option value="1">Planet Fitness</option>
+                <option value="2">Anytime Fitness</option>
+                <option value="3">LA Fitness</option>
+                <option value="3"> I don't have a membership</option>
+            </select>
 
-    <h3>Question 2</h3>
-    <h5>What area of fitness are you looking to improve?</h5>
-    <select data-placeholder="" class="chosen-select" id="q2">
-        <option value=""></option>
-        <option value="1"> Strength</option>
-        <option value="2"> Cardio</option>
-        <option value="3">Flexibility</option>
-        <option value="4"> General Fitness</option>
-        <option value="5">All of the above</option>
-    </select>
+            <h3>Question 2</h3>
+            <h5>What area of fitness are you looking to improve?</h5>
+            <select data-placeholder="" class="chosen-select" id="q2">
+                <option value=""></option>
+                <option value="1"> Strength</option>
+                <option value="2"> Cardio</option>
+                <option value="3">Flexibility</option>
+                <option value="4"> General Fitness</option>
+                <option value="5">All of the above</option>
+            </select>
 
-    <h3>Question 3</h3>
-    <h5>How many days per week do you want to work out? </h5>
-    <select data-placeholder="" class="chosen-select" id="q3">
-        <option value=""></option>
-        <option value="1">1 day</option>
-        <option value="2">2 days</option>
-        <option value="3">3 days</option>
-        <option value="4">4 days</option>
-        <option value="5">5 days</option>
-        <option value="6">6 days</option>
-        <option value="7">7 days</option>
-    </select>
+            <h3>Question 3</h3>
+            <h5>How many days per week do you want to work out? </h5>
+            <select data-placeholder="" class="chosen-select" id="q3">
+                <option value=""></option>
+                <option value="1">1 day</option>
+                <option value="2">2 days</option>
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+                <option value="5">5 days</option>
+                <option value="6">6 days</option>
+                <option value="7">7 days</option>
+            </select>
 
-    <h3>Question 4</h3>
-    <h5>On a scale of 1-10 how serious are you when working out? 0 being not very serious, 10 being very serious?</h5>
-    <select data-placeholder="" class="chosen-select" id="q4">
-        <option value=""></option>
-        <option value="1">1 </option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
+            <h3>Question 4</h3>
+            <h5>On a scale of 1-5 how serious are you when working out? 1 being not very serious, 5 being very serious?</h5>
+            <select data-placeholder="" class="chosen-select" id="q4">
+                <option value=""></option>
+                <option value="1">1 </option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
 
-    <h3>Question 5</h3>
-    <h5>When do you normally go to the gym?</h5>
-    <select data-placeholder="" class="chosen-select" id="q5">
-        <option value=""></option>
-        <option value="1">Morning</option>
-        <option value="2">evening</option>
-        <option value="3">nights</option>
-    </select>
+            <h3>Question 5</h3>
+            <h5>When do you normally go to the gym?</h5>
+            <select data-placeholder="" class="chosen-select" id="q5">
+                <option value=""></option>
+                <option value="1">Morning</option>
+                <option value="2">evening</option>
+                <option value="3">nights</option>
+            </select>
 
-    <h3>Question 6</h3>
-    <h5>Do you need a good partner, or just someone to keep you accountable with going to the gym.</h5>
-    <select data-placeholder="" class="chosen-select" id="q6">
-        <option value=""></option>
-        <option value="1">Inspiration</option>
-        <option value="2">guidance</option>
-        <option value="3">accountability</option>
-    </select>
+            <h3>Question 6</h3>
+            <h5>Do you need a good partner, or just someone to keep you accountable with going to the gym.</h5>
+            <select data-placeholder="" class="chosen-select" id="q6">
+                <option value=""></option>
+                <option value="1">Inspiration</option>
+                <option value="2">guidance</option>
+                <option value="3">accountability</option>
+            </select>
 
-    <h3>Question 7</h3>
-    <h5>Do you mind teaching someone?</h5>
-    <select data-placeholder="" class="chosen-select" id="q7">
-        <option value=""></option>
-        <option value="1">Yes</option>
-        <option value="2">No</option>
-        <option value="3">It's OK</option>
-    </select>
+            <h3>Question 7</h3>
+            <h5>Do you mind teaching someone?</h5>
+            <select data-placeholder="" class="chosen-select" id="q7">
+                <option value=""></option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+                <option value="3">It's OK</option>
+            </select>
 
-    <h3>Question 8</h3>
-    <h5>Are you looking for a teacher?</h5>
-    <select data-placeholder="" class="chosen-select" id="q8">
-        <option value=""></option>
-        <option value="1">Yes</option>
-        <option value="2">No</option>
-    </select>
+            <h3>Question 8</h3>
+            <h5>Are you looking for a teacher?</h5>
+            <select data-placeholder="" class="chosen-select" id="q8">
+                <option value=""></option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
 
-    <h3>Question 9</h3>
-    <h5>How knowledgeable are you in the area you are looking to improve?</h5>
-    <select data-placeholder="" class="chosen-select" id="q9">
-        <option value=""></option>
-        <option value="1">1 (knowledgeable)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (not knowledgeable)</option>
-    </select>
+            <h3>Question 9</h3>
+            <h5>How knowledgeable are you in the area you are looking to improve?</h5>
+            <select data-placeholder="" class="chosen-select" id="q9">
+                <option value=""></option>
+                <option value="1">1 (knowledgeable)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (not knowledgeable)</option>
+            </select>
 
-    <h3>Question 10</h3>
-    <h5>Another Question </h5>
-    <select data-placeholder="" class="chosen-select" id="q10">
-        <option value=""></option>
-        <option value="1">1 </option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 </option>
-    </select>
-    <br>
-    <br>
-    <a href="/matches" class="button"> Submit</a>
-</div>
-</div>
+            <h3>Question 10</h3>
+            <h5>Another Question </h5>
+            <select data-placeholder="" class="chosen-select" id="q10">
+                <option value=""></option>
+                <option value="1">1 </option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 </option>
+            </select>
+            <br>
+            <br>
+            <a href="/matches" class="button"> Submit</a>
+        </div>
+    </div>
 
-{{!-- <nav class="navbar fixed-bottom">
-  <a class="navbar-brand"> <p>&copy; Copyright 2018 Gym Buddy</p></a>
-</nav> --}}
+    {{!--
+    <nav class="navbar fixed-bottom">
+        <a class="navbar-brand"> <p>&copy; Copyright 2018 Gym Buddy</p></a>
+    </nav> --}}
