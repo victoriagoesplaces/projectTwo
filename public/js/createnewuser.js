@@ -6,30 +6,31 @@ $("#confirm-button").on("click", function (event) {
     //Uncomment for production
     var useremail = $("#email").val();
     var password = $("#password").val();
-    var confirmPassword = $("#password").val();//change once confirm password field exists
+    var confirmPassword = $("#passwordConfirm").val();//change once confirm password field exists
 
 
     if (confirmPassword !== password) {
-        return; //possibly create a modal or alert stating that passwords do not match
-    }
+        alert("Password and Confirm Password field do not match");//possibly create a modal or alert stating that passwords do not match
+    } else {
 
-    //Set newUser
-    
-    var newUser = {
-        userEmail: useremail,
-        password: password,
-        confirmPassword: confirmPassword
-    }
-    
+        //Set newUser
 
-    $.ajax("/api/createnewuser", {
-        type: "POST",
-        data: newUser,
-        success: function (res) {
-            if (res.redirect !== undefined) {
-                window.location.href = res.redirect_url
-            }
+        var newUser = {
+            userEmail: useremail,
+            password: password,
+            confirmPassword: confirmPassword
         }
 
-    });
-});
+
+        $.ajax("/api/createnewuser", {
+            type: "POST",
+            data: newUser,
+            success: function (res) {
+                if (res.redirect !== undefined) {
+                    window.location.href = res.redirect_url
+                }
+            }
+
+        });
+    }
+}); //end on click function

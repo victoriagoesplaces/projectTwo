@@ -29,7 +29,7 @@ var options = {
   host: "localhost",
   user: "root",
   password: "root",
-  database: "exampledb",
+  database: "workout_db",
   port: 8889,
 };
 var sessionStore = new MySQLStore(options);
@@ -68,8 +68,10 @@ passport.use(new LocalStrategy(function (username, password, done) {
     bcrypt.compare(password, hash, function (err, response) {
       if (err) throw err;
       if (response === true) {
+        console.log('True portion, redirect should work to matches')
         return done(null, {userId: dbUser.id});
       } else {
+        console.log("False portion, redirect should work to login")
         return done(null, false);
       }
     });

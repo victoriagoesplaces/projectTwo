@@ -1,29 +1,35 @@
 <div class="container">
     <div class="jumbotron mt-4">
         <h1 class="display-4 text-center">About Us</h1>
-            <p>Find the your perfect gym buddy that will keep you motivated and get you closer to your fitness goals</p>
+        <p>Find the your perfect gym buddy that will keep you motivated and get you closer to your fitness goals</p>
 
-            <form>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
 
-            {{!-- confirm password --}}
-            
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="checkMark">
-                    <label class="form-check-label" for="exampleCheck1">Accept Terms and Conditions</label>
-                </div>
-                <br>
-                <a href="/survey" class="button">Confirm</a>
-            </form>
+            <div class="form-group">
+                <label for="passwordConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="passwordConfirm" placeholder="Password">
+            </div>
 
-    
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="checkMark">
+                <label class="form-check-label" for="exampleCheck1">Accept Terms and Conditions</label>
+            </div>
+            <br>
+            <a href="/api/createnewuser" class="button" id="confirm-button">Confirm</a>
+        </form>
+
+
     </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/createnewuser.js"></script>

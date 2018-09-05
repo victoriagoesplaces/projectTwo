@@ -1,0 +1,14 @@
+
+
+
+1. What is your primary workout goal? Choices: Gain strength, Build Endurance, Improve Flexibility, Lose Weight, Balanced: Strength/Endurance/Flexibility etc...
+
+2. How often do you like to work out per week? Choices: any number from 1-7
+
+3. How seriously do you take your workouts? Choices: a) Fun is the main goal, b)I want to meet my fitness goals, but only if it's fun too, c) Fitness first, Fun second d) The only goal is meeting my workout goals
+
+4. When do you want to workout? Choices: Early Morning, Mid Morning, Mid-Day, Early Afternoon, Late Afternoon/Evening, Night, Overnight
+
+5. In general, what level of workout knowledge do you currently have in the areas where you would like to improve? Choices: 0 (complete novice) - 10 (expert)
+
+6. 
