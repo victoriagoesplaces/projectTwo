@@ -40,7 +40,7 @@ module.exports = function (app) {
       matchesArray: []
     };
 
-    currentUser = req.user.userId;
+    var currentUser = req.user;
 
     //datbse calls to get get current user info, then to get all users to allow looping for comparison algorithm
     db.User.findOne({
@@ -53,7 +53,7 @@ module.exports = function (app) {
         //loop to compare each user to the current user and increment the count for matches
          var matchCompatibility = 0;
 
-         for (i=0; i<allUaers.length; i++) {
+         for (i=0; i<allUsers.length; i++) {
           if (currentUser !== allUsers[i].id) {
             ///////////////////////////////////////
               /// Input code here for comparisions

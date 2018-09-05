@@ -21,7 +21,7 @@ module.exports = function (app) {
   app.post("/api/createnewuser", function (req, res) {
 
     //read in data from the submission from the registration page
-  
+
 
     //hash the password with bcrypt for secure storage in the databse
     bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
@@ -42,12 +42,12 @@ module.exports = function (app) {
         //logs in user if profile creation succeeds
         if (userId) {
           console.log('login Id: ' + userId);
-          req.login(userId, function(err) {
+          req.login(userId, function (err) {
             var newPath = "/survey"// + "/" +userId //uncomment when individual id paths are ready
 
             res.json({
               "redirect": true,
-              "redirect_url": newPath 
+              "redirect_url": newPath
             });
           });
         }
@@ -59,15 +59,38 @@ module.exports = function (app) {
 
   //This route logs a user in from the login page
   app.post("/api/authenticateuser", passport.authenticate("local", {
-    successRedirect: '/',
+    successRedirect: '/matches',
     failureRedirect: '/login'
   }));
 
-  app.get('/logout', function(req, res) {
+  app.get('/logout', function (req, res) {
     req.logout();
     req.session.destroy();
     res.redirect('/');
   });
+
+
+  //This route takes the survey submission from the survey page, sends then to the database, then redirects the user to the matches page
+  app.put("/api/updatesurvey", authenticationMiddleware(), function (req, res) {
+    console.log(req.body);
+
+    var survey = req.body;
+    var currentUser = req.user;
+    console.log("Current User ID: " + currentUser);
+
+    db.User.update(
+      survey,
+      {where: {
+        id: currentUser
+      }}
+    ).then(function (err) {
+      res.json({
+        "redirect": true,
+        "redirect_url": "/matches"
+      });
+    });
+
+  });//end update api route
 
 
 
@@ -80,12 +103,12 @@ module.exports = function (app) {
 };
 
 
-passport.serializeUser(function(userId, done) {
+passport.serializeUser(function (userId, done) {
   done(null, userId);
 });
- 
-passport.deserializeUser(function(userId, done) {
-    done(null, userId);
+
+passport.deserializeUser(function (userId, done) {
+  done(null, userId);
 });
 
 
