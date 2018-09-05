@@ -1,39 +1,92 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page-landing page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-      });
-    });
+  app.get("/", function (req, res) {
+    res.render("index", {});
+
   });
 
   //login page
-  app.get("/login", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("login", {
-      });
+  app.get("/login", function (req, res) {
+    res.render("login", {
     });
+
   });
 
-//signup page
-  app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("signup", {
-        // msg: "Welcome!",
-        // examples: dbExamples
-      });
+  //signup page
+  app.get("/signup", function (req, res) {
+    res.render("signup", {
+      // msg: "Welcome!",
+      // examples: dbExamples
     });
+
   });
 
   //survey
-  app.get("/survey", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("survey", {
-        // msg: "Welcome!",
-        // examples: dbExamples
+  //JVE changing route to be called createnewuser which will redirect to /survey upon adding a new user
+  app.get("/survey", authenticationMiddleware(), function (req, res) {
+
+    res.render("survey", {
+
+    });
+  });
+
+  //return matches when selected
+
+  app.get("/matches", authenticationMiddleware(), function (req, res) {
+
+    var matchesObject = {
+      matchesArray: []
+    };
+
+    var currentUser = req.user;
+
+    //datbse calls to get get current user info, then to get all users to allow looping for comparison algorithm
+    db.User.findOne({
+      where: {id: currentUser}
+    }).then(function(userInfo){
+      console.log("XXXXXXXXXXXXXXXX");
+      console.log(userInfo.id);
+      db.User.findAll({}).then(function(allUsers){
+        console.log("XXXXXXXXXXXXXXXX");
+        //loop to compare each user to the current user and increment the count for matches
+         var matchCompatibility = 0;
+
+         for (i=0; i<allUsers.length; i++) {
+          if (currentUser !== allUsers[i].id) {
+            ///////////////////////////////////////
+              /// Input code here for comparisions
+            ///////////////////////////////////////
+
+            //adds match to the user array
+            if (matchCompatibility > 5) {
+              matchesObject.matchesArray.push(allUsers[i]);
+            }
+          }//end check to ensure user is not compared to their own survey
+         }
+
+        //
       });
+    });
+
+    res.render("matches", matchesObject)
+  });
+
+  //profile and reviews
+  app.get("/matches/:id/profile", function (req, res) {
+    res.render("profile", {
+      // msg: "Welcome!",
+      // examples: workout_db
+    });
+  });
+
+
+//add Review
+app.get("/matches/:id/addreview", function (req, res) {
+    res.render("addreview", {
+      // msg: "Welcome!",
+      // examples: workout_db
     });
   });
 
@@ -47,7 +100,17 @@ module.exports = function(app) {
   // });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
+};
+
+//call this function to allow access only to signed in and authenticated users.
+function authenticationMiddleware() {
+  return (req, res, next) => {
+
+    if (req.isAuthenticated()) return next();
+
+    res.redirect('/login');
+  };
 };

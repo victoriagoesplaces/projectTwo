@@ -33,6 +33,7 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
+    //.map() executes the function contained within on every element in the array passed in
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)

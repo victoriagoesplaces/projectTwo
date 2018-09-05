@@ -1,0 +1,15 @@
+1. Pulled in Victoria's signUp page and modified exisiting authentication to match. Modified createnewuser.js to incorporate the confirm password field instead of a place holder.
+
+2. Pulled in Christian's model files. Integrated survey answers into User model.
+
+3. Created a surveySubmit.js file, and added link to javascript and jquery to the survey.handlebars file to handle the submit.
+
+4. Changed the option value to 4 on "I don't have a gym membership" for question 1.
+
+5. Added an ID to the a tag "submit" element at the bottom of the survey page to allow use of an on click function. Also change the path to hit an API "PUT" update route for the users survey results, then redirect to the matches html route.
+
+6. Updated the api and html routes files to ensure survey results are updated properly.
+
+7. Pulled in Steven's matches.handlebars file.
+
+8. Pulled in the the css file to ensure it matches with the current master branch.
