@@ -92,6 +92,21 @@ module.exports = function (app) {
 
   });//end update api route
 
+  //this route displays the profile of a single match when chosen from the matches screen
+
+  app.get("/profile/:id", function(req, res) {
+
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbMatch) {
+
+      res.render("profile", dbMatch);
+    });
+
+  });//end get individual profile route
+
 
 
   // Delete an example by id

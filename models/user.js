@@ -17,5 +17,12 @@ module.exports = function(sequelize, DataTypes) {
       question9: DataTypes.INTEGER,
       question10: DataTypes.INTEGER
     });
+
+    User.associate = function(models) {
+      User.hasMany(models.review, {
+        onDelete: "cascade"
+      });
+    };
+
     return User;
   };
