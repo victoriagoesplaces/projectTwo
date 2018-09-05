@@ -4,5 +4,14 @@ module.exports = function(sequelize, DataTypes) {
       description: DataTypes.TEXT,
       rating: DataTypes.INTEGER
     });
+
+    Review.associate = function(models) {
+      Review.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
     return Review;
   };

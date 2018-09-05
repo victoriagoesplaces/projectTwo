@@ -29,7 +29,7 @@ $("#submit-button").on("click", function (event) {
                 window.location.href = res.redirect_url
             }
         }
-    })
+    });
 
 
 });//end on click function
