@@ -1,11 +1,19 @@
 {
-  "development": {
+  "developmentMac": {
     "username": "root",
     "password": "root",
     "database": "workout_db",
     "host": "localhost",
     "port": 8889,
     "dialect": "mysql"
+  },
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "workout_db",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306
   },
   "test": {
     "username": "root",
