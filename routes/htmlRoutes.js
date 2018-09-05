@@ -3,14 +3,12 @@ var db = require("../models");
 module.exports = function (app) {
   // Load index page-landing page
   app.get("/", function (req, res) {
-
     res.render("index", {});
 
   });
 
   //login page
   app.get("/login", function (req, res) {
-
     res.render("login", {
     });
 
@@ -18,7 +16,6 @@ module.exports = function (app) {
 
   //signup page
   app.get("/signup", function (req, res) {
-
     res.render("signup", {
       // msg: "Welcome!",
       // examples: dbExamples
@@ -76,6 +73,22 @@ module.exports = function (app) {
     res.render("matches", matchesObject)
   });
 
+  //profile and reviews
+  app.get("/matches/:id/profile", function (req, res) {
+    res.render("profile", {
+      // msg: "Welcome!",
+      // examples: workout_db
+    });
+  });
+
+
+//add Review
+app.get("/matches/:id/addreview", function (req, res) {
+    res.render("addreview", {
+      // msg: "Welcome!",
+      // examples: workout_db
+    });
+  });
 
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
