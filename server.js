@@ -57,6 +57,10 @@ passport.use(new LocalStrategy(function (username, password, done) {
       email: username
     }
   }).then(function (dbUser) {
+
+    console.log("In local strategy with userId");
+    console.log(dbUser.id);
+
     if (!dbUser) {
       console.log("not a valid user");
       return (null, false);
@@ -64,12 +68,11 @@ passport.use(new LocalStrategy(function (username, password, done) {
     console.log("valid user");
     const hash = dbUser.password;
 
-
     bcrypt.compare(password, hash, function (err, response) {
       if (err) throw err;
       if (response === true) {
         console.log('True portion, redirect should work to matches')
-        return done(null, {userId: dbUser.id});
+        return done(null, dbUser.id);
       } else {
         console.log("False portion, redirect should work to login")
         return done(null, false);
