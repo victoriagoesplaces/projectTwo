@@ -3,6 +3,10 @@
 $("#add-review-button").on('click', function() {//rename button as necessary depending on handlebars file
     event.preventDefault();
 
+    console.log("Star Value");
+    var stars =  $("input[name='reviewStars']:checked").val();
+    console.log(stars);
+
     //pull in values for reviews here
 
     /*Uncomment when page works
