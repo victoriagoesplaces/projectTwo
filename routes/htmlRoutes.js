@@ -20,8 +20,6 @@ module.exports = function (app) {
   app.get("/signup", function (req, res) {
 
     res.render("signup", {
-      // msg: "Welcome!",
-      // examples: dbExamples
     });
 
   });
@@ -44,36 +42,68 @@ module.exports = function (app) {
     };
 
     var currentUser = req.user;
+    console.log("checking req.user in matches");
+    console.log(req.user);
 
     //datbse calls to get get current user info, then to get all users to allow looping for comparison algorithm
     db.User.findOne({
       where: {id: currentUser}
     }).then(function(userInfo){
-      console.log("XXXXXXXXXXXXXXXX");
-      console.log(userInfo.id);
+     
+  
       db.User.findAll({}).then(function(allUsers){
-        console.log("XXXXXXXXXXXXXXXX");
+        
         //loop to compare each user to the current user and increment the count for matches
-         var matchCompatibility = 0;
+         
 
-         for (i=0; i<allUsers.length; i++) {
+console.log("All Users length");
+console.log(allUsers.length);
+
+         //loop through all users in the database
+         for (i = 0; i < allUsers.length; i++) {
           if (currentUser !== allUsers[i].id) {
-            ///////////////////////////////////////
-              /// Input code here for comparisions
-            ///////////////////////////////////////
 
+            var matchCompatibility = 0; 
+            var userResponse =createAnswerArray(userInfo);            
+            var allResponse = createAnswerArray(allUsers[i]);
+           
+            //check answers of user vs a single other user
+            for (j = 0; j < allResponse.length; j++) {
+              if (allResponse[j] == userResponse[j]) {
+                matchCompatibility = matchCompatibility + 1;
+              };
+
+            };//close j loop through questions
+            
             //adds match to the user array
             if (matchCompatibility > 5) {
+              console.log("Inserting into matches array");
               matchesObject.matchesArray.push(allUsers[i]);
-            }
-          }//end check to ensure user is not compared to their own survey
-         }
+              console.log(matchesObject.matchesArray.length);
+            };//end match compatibility check
+          };//end check to ensure user is not compared to their own survey
 
-        //
+         };
+
+      }).then(function() {
+        console.log("Matches Object");
+        console.log(matchesObject);
+        res.render("matches", matchesObject);
       });
     });
+  });
 
-    res.render("matches", matchesObject)
+  //Route to access individual profiles
+  app.get("/profile/:id",  authenticationMiddleware(), function(req, res) {
+
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbMatch) {
+      res.render("profile", dbMatch);
+    });
+
   });
 
 
@@ -101,3 +131,25 @@ function authenticationMiddleware() {
     res.redirect('/login');
   };
 };
+
+
+//create an array of question responses from the object returned from the database
+function createAnswerArray(databaseObject, answerArray) {
+  var answerArray = [];
+
+  answerArray.push(databaseObject.question1);
+  answerArray.push(databaseObject.question2);
+  answerArray.push(databaseObject.question3);
+  answerArray.push(databaseObject.question4);
+  answerArray.push(databaseObject.question5);
+  answerArray.push(databaseObject.question6);
+  answerArray.push(databaseObject.question7);
+  answerArray.push(databaseObject.question8);
+  answerArray.push(databaseObject.question9);
+  answerArray.push(databaseObject.question10);
+
+return answerArray;
+
+}; //end create answer array
+
+

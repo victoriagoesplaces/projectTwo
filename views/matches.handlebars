@@ -8,6 +8,7 @@
 </nav>
 
 <br>
+{{#each matchesArray}}
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
@@ -17,19 +18,20 @@
                 <h2>My matches</h2>
             </div>
             <div class="card-body">
-                <img class="card-img-top photo" src="https://www.bspmediagroup.com/event/img/logos/user_placeholder.png" alt="Card image cap">
-                <h5 class="card-title">Name</h5>
-                <p class="card-text"> age, id</p>
-                <button value="2" class="button profile-button">View Profile</button>
+                <img class="card-img-top photo" src="{{photo}}" alt="Card image cap">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text"> Age: {{age}}</p>
+                <button value="{{id}}" href="/profile/{{id}}" class="button profile-button">View Profile</button>
             </div>
             <div id="" class="card-footer text-muted">
-                Matching score
+                Matching score: 
             </div>
         </div>
 <br>
-        
+      
     </div>
 </div>
+{{/each}}  
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/selectSingleMatch.js"></script>
