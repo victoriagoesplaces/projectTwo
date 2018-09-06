@@ -30,7 +30,7 @@ var options = {
   user: "root",
   password: "root",
   database: "workout_db",
-  port: 8889,
+  port: process.env.port,
 };
 var sessionStore = new MySQLStore(options);
 

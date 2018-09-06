@@ -4,7 +4,7 @@
     "password": "root",
     "database": "workout_db",
     "host": "localhost",
-    "port": 8889,
+    "port": "",
     "dialect": "mysql"
   },
   "test": {
