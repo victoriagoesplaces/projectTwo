@@ -111,6 +111,33 @@ color: #ffe479;
 background-color:  #07070711;
 }
 
+input[type=email], input[type=password], input[type=text]{
+  color: #ffe479!important;
+  background-color:  #07070711!important;
+}
+
+/* autofill background */
+@-webkit-keyframes autofill {
+  to {
+      color: #ffe479;
+      background: transparent;
+  }
+}
+
+@keyframes autofill {
+  to {
+      color: #ffe479;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
 /* matches */
 .card {
   background-color:rgba(0, 0, 0, 0.219);
