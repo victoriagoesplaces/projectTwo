@@ -97,10 +97,16 @@ console.log(allUsers.length);
   app.get("/profile/:id",  authenticationMiddleware(), function(req, res) {
 
     db.User.findOne({
+      include: [{
+        model: db.Review
+      }]
+    },
+      {
       where: {
         id: req.params.id
       }
     }).then(function(dbMatch) {
+      console.log(dbMatch);
       res.render("profile", dbMatch);
     });
 
