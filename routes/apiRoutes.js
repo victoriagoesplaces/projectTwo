@@ -94,19 +94,46 @@ module.exports = function (app) {
 
   //this route displays the profile of a single match when chosen from the matches screen
 
-  app.get("/profile/:id", function(req, res) {
+  
+  app.post("/transfer", authenticationMiddleware(), function(req, res) {
 
-    db.User.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbMatch) {
+    console.log("In the /transfer section looking for id:");
+    
+    console.log("Id in body");
+    console.log(req.body.id);
 
-      res.render("profile", dbMatch);
+    newRoute = "/profile/" + req.body.id
+    console.log(newRoute);
+
+    res.json({
+      "redirect": true,
+      "redirect_url": newRoute
     });
+
 
   });//end get individual profile route
 
+  
+
+
+  //This route adds a review to the database and resends the user to the /profile/:id page
+  app.post("/review", authenticationMiddleware(), function(req, res) {
+    console.log("req.body");    
+    console.log(req.body);
+
+      db.Review.create(
+        req.body
+      ).then(function (err) {
+        if (err) throw err;
+
+      res.json({
+        "redirect": true,
+        "redirect_url": "/profile/" + req.body.id
+      });
+    });
+
+      
+  });
 
 
   // Delete an example by id
