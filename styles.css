@@ -1,0 +1,265 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+body{
+  background-image: url("./../images/workout.png");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.mainPage{
+  text-align: center;
+  position: relative;
+  margin-top: 15%;
+}
+
+h1{
+  color:#ffe479;
+  /* font-weight: bolder; */
+  font-size: 400%;
+}
+
+/* signup and log in buttons */
+.button {
+  background-color: rgba(255, 71, 15, 0.1);
+  background-image: none;
+  border-image: linear-gradient(to right,  #ffe479, #ffe479);
+  border-image-slice: 1;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  color: #ffe479;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 1.25em 2em;
+  margin-left: 2%;
+  text-shadow: none;
+  transition-property: box-shadow, transform;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffe479;
+}
+
+.button:hover {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.02) translateY(-4px);
+  color:  #ffe479;
+}
+
+.button:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  transform: scale(0.98) translateY(-2px);
+}
+
+#add-review-button {
+  text-align: center;
+  margin-left: 0%;
+}
+/* 404 Page */
+.jumbotron {
+  background-color:rgba(0, 0, 0, 0.219);
+}
+
+a:hover{
+  color:  #ffe479;
+}
+
+/* InputBox */
+label{
+  color:  #ffe479;
+  font-size: 100%;
+}
+
+p{
+  color: white;
+  font-size: 120%;
+  text-align: center;
+}
+
+/* survey */
+h2 {
+  color:  #ffe479;
+  text-align: center;
+}
+h3 {
+  color: #ffe479;
+  font-size: 120%;
+}
+
+h5 {
+  color: white;
+  font-size: 120%;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+/* Survey */
+.form-control{
+color: #ffe479;
+background-color:  #07070711;
+}
+
+select{
+  color: #ffe479;
+  background-color:  black;
+
+}
+
+input[type=email], input[type=password], input[type=text]{
+  color: #ffe479!important;
+  background-color:  #07070711!important;
+}
+
+/* autofill background */
+@-webkit-keyframes autofill {
+  to {
+      color: #ffe479;
+      background: transparent;
+  }
+}
+
+@keyframes autofill {
+  to {
+      color: #ffe479;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+/* matches */
+.card {
+  background-color:rgba(0, 0, 0, 0.219);
+}
+
+.photo {
+  border-radius: 2904px;
+  position: relative;
+  max-height: 15rem;
+  max-width: 15rem;
+  align-self: center;
+}
+
+/* footer */
+.navbar {
+  background-color:rgba(0, 0, 0, 0.493);
+  color:  #ffe479;
+}
+
+/* @media for image */
+
+@media screen and (max-width: 799px) {
+  .photo {
+    border-radius: 2904px;
+    position: relative;
+    max-height: 10rem;
+    max-width: 10rem;
+}
+}
+
+@media screen and (min-width: 800px) {
+
+  .photo {
+    border-radius: 2904px;
+    position: relative;
+    max-height: 12rem;
+    max-width: 12rem;
+}
+}
+
+
+/* stars */
+
+/*sprite with stars*/
+#reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+  background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
+}
+
+#reviewStars-input {
+  margin-top: 2%;
+  align-self: center;
+  margin-left: 1%;
+  /*fix floating problems*/
+  overflow: hidden;
+  *zoom: 1;
+  /*end of fix floating problems*/
+ 
+  position: relative;
+  float: left;
+}
+
+#reviewStars-input input {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  
+  width: 43px;
+  height: 40px;
+  
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+#reviewStars-input input:checked ~ label {
+  background-position: 0 -40px;
+  height: 40px;
+  width: 43px;
+}
+
+#reviewStars-input label {
+  background-position: 0 0;
+  height: 40px;
+  width: 43px;
+  float: right;
+  cursor: pointer;
+  margin-right: 10px;
+  
+  position: relative;
+  z-index: 1;
+}
+
+#reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+  background-position: 0 -40px;
+  height: 40px;
+  width: 43px;
+}
+
+#reviewStars-input #star-0 {
+  left: 0px;
+}
+#reviewStars-input #star-1 {
+  left: 53px;
+}
+#reviewStars-input #star-2 {
+  left: 106px;
+}
+#reviewStars-input #star-3 {
+  left: 159px;
+}
+#reviewStars-input #star-4 {
+  left: 212px;
+}
+#reviewStars-input #star-5 {
+  left: 265px;
+}
