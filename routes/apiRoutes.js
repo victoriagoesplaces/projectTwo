@@ -118,18 +118,19 @@ module.exports = function (app) {
 
   //This route adds a review to the database and resends the user to the /profile/:id page
   app.post("/review", authenticationMiddleware(), function(req, res) {
-    console.log("req.body");    
+    console.log("req.body##########################################");    
     console.log(req.body);
 
       db.Review.create(
         req.body
       ).then(function (err) {
-        if (err) throw err;
-
-      res.json({
+        console.log("reached error check");
+       // if (err) throw err;
+        res.end();
+      /*res.json({
         "redirect": true,
         "redirect_url": "/profile/" + req.body.id
-      });
+      });*/
     });
 
       
