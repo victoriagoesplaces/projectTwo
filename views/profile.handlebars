@@ -1,3 +1,12 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+        <h2 class="logo">Gym Buddy</h2>
+    </div>
+    <div>
+        <a href="/login" class="button">Log out</a>
+    </div>
+</nav>
+
 <br>
 <br>
 <div class="row">
@@ -46,8 +55,11 @@
             <h3>Previous reviews</h3>
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <h2>{{dataValues.Review}}</h2>
+                <div class="col-sm-8" style="color: white;">
+                    {{#each dataValues.Reviews}}
+                    <div>{{dataValues.description}}</div>
+                    <div>{{dataValues.rating}} / 5</div>
+                    {{/each}}
                 </div>
 
             </div>
