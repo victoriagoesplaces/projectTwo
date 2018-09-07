@@ -16,7 +16,7 @@ var db = require("./models");
 
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));

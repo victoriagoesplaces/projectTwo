@@ -110,9 +110,15 @@ h4 {
 }
 
 /* Survey */
-.form-control, select{
+.form-control{
 color: #ffe479;
 background-color:  #07070711;
+}
+
+select{
+  color: #ffe479;
+  background-color:  black;
+
 }
 
 input[type=email], input[type=password], input[type=text]{
