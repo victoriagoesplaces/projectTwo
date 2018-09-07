@@ -64,6 +64,10 @@ a {
   transform: scale(0.98) translateY(-2px);
 }
 
+#add-review-button {
+  text-align: center;
+  margin-left: 0%;
+}
 /* 404 Page */
 .jumbotron {
   background-color:rgba(0, 0, 0, 0.219);
@@ -189,6 +193,7 @@ input:-webkit-autofill {
 #reviewStars-input {
   margin-top: 2%;
   align-self: center;
+  margin-left: 1%;
   /*fix floating problems*/
   overflow: hidden;
   *zoom: 1;
