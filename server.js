@@ -23,15 +23,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(cookieParser());
- 
+
 //sets up approptiate to allow sessions to continue
-var options = {
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "workout_db",
-  port: process.env.dbport,
-};
+if (process.env.NODE_ENV === "production") {
+    var options = {
+    use_env_variable: "JAWSDB_URL"
+  };
+}
+else {
+  var options = {
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "workout_db",
+    port: process.env.dbport,
+  };
+}
 var sessionStore = new MySQLStore(options);
 
 //set use for express-session
