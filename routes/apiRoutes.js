@@ -31,7 +31,7 @@ module.exports = function (app) {
         password: hash
       };
 
-      console.log(newUser.password);
+     
 
       //sequelize send info to database
       //need to match name to model name, placeholder as user for now
@@ -41,7 +41,7 @@ module.exports = function (app) {
 
         //logs in user if profile creation succeeds
         if (userId) {
-          console.log('login Id: ' + userId);
+          
           req.login(userId, function (err) {
             var newPath = "/survey"// + "/" +userId //uncomment when individual id paths are ready
 
@@ -72,11 +72,10 @@ module.exports = function (app) {
 
   //This route takes the survey submission from the survey page, sends then to the database, then redirects the user to the matches page
   app.put("/api/updatesurvey", authenticationMiddleware(), function (req, res) {
-    console.log(req.body);
+  
 
     var survey = req.body;
     var currentUser = req.user;
-    console.log("Current User ID: " + currentUser);
 
     db.User.update(
       survey,
@@ -97,13 +96,10 @@ module.exports = function (app) {
   
   app.post("/transfer", authenticationMiddleware(), function(req, res) {
 
-    console.log("In the /transfer section looking for id:");
-    
-    console.log("Id in body");
-    console.log(req.body.id);
+  console.log()
 
     newRoute = "/profile/" + req.body.id
-    console.log(newRoute);
+    
 
     res.json({
       "redirect": true,
@@ -118,13 +114,12 @@ module.exports = function (app) {
 
   //This route adds a review to the database and resends the user to the /profile/:id page
   app.post("/review", authenticationMiddleware(), function(req, res) {
-    console.log("req.body##########################################");    
-    console.log(req.body);
+   
 
       db.Review.create(
         req.body
       ).then(function (err) {
-        console.log("reached error check");
+        
        // if (err) throw err;
         res.end();
       /*res.json({

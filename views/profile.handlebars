@@ -44,13 +44,20 @@
             <br>
 
             <h3>Previous reviews</h3>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <h2>{{dataValues.Review}}</h2>
-                </div>
 
+            <div class="row">
+
+                <div class="col-sm-2"></div>
+                
+                <div class="col-sm-8" style="color: white;">
+                    {{#each dataValues.Reviews}}
+                    <div>{{dataValues.description}}</div>
+                    <div>{{dataValues.rating}} / 5</div>
+                    {{/each}}
+                </div>
+                
             </div>
+
         </div>
     </div>
 </div>
