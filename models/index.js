@@ -9,7 +9,7 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 if(config.host === "localhost"){
-  config.port = process.env.port;
+  config.port = process.env.dbport;
 }
 
 if (config.use_env_variable) {
