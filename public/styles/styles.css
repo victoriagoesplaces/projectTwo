@@ -38,13 +38,16 @@ h1{
   font-size: 0.875rem;
   line-height: 1;
   padding: 1.25em 2em;
-  margin-left: 2%;
   text-shadow: none;
   transition-property: box-shadow, transform;
   user-select: none;
   vertical-align: top;
   white-space: nowrap;
   will-change: box-shadow, transform;
+}
+
+#signUp{
+margin-left: 2%;
 }
 
 a {
