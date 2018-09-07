@@ -9,30 +9,34 @@ $("#add-review-button").on('click', function() {//rename button as necessary dep
 
     //pull in values for reviews here
 
-    /*Uncomment when page works
+    //Uncomment when page works
     var newReview = {
-        id: $(this).val(), //ensure that the add review button has a value attribute with the user's ID
+        UserId: $(this).val(),
         description: $("#description").val(), //possibly rename depending on handlebars
-        rating: parseInt($("#rating").val()) //possibly rename depending on handlebars
+        rating: stars
 };
-*/
 
     //temporary newReview variable for testing
-    var newReview = {
+    /*var newReview = {
         UserId: 1,
         name: "Joe",
         description: "This is a review",
         rating: 5
-    };
+    };*/
+
+    console.log(newReview);
 
     $.ajax({
         method: "POST",
         url: "/review",
-        data: newReview,
-        success: function (res) {
+        data: newReview
+        /*success: function (res) {
             if (res.redirect !== undefined) {
                 window.location.href = res.redirect_url
             }
-        }
+        }*/
+    }).then(function() {
+        console.log("made it to reload")
+        location.reload();
     });
 });
