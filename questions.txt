@@ -12,3 +12,6 @@
 5. In general, what level of workout knowledge do you currently have in the areas where you would like to improve? Choices: 0 (complete novice) - 10 (expert)
 
 6. 
+
+
+CREATE TABLE IF NOT EXISTS `sessions` (`session_id` VARCHAR(32) , `expires` DATETIME, `data` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`session_id`)) ENGINE=InnoDB;

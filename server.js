@@ -6,9 +6,10 @@ var cookieParser = require("cookie-parser");
 
 //Authentication packages
 var session = require("express-session");
+var SessionStore = require('express-session-sequelize')(session.Store);
 var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
-var MySQLStore = require("express-mysql-session")(session);
+//var MySQLStore = require("express-mysql-session")(session);
 var bcrypt = require('bcrypt');
 
 
@@ -16,7 +17,7 @@ var db = require("./models");
 
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,6 +26,7 @@ app.use(express.static("public"));
 app.use(cookieParser());
  
 //sets up approptiate to allow sessions to continue
+/*
 var options = {
   host: "localhost",
   user: "root",
@@ -33,6 +35,10 @@ var options = {
   port: process.env.dbport,
 };
 var sessionStore = new MySQLStore(options);
+*/
+var sessionStore = new SessionStore({
+  db: db.sequelize
+});
 
 //set use for express-session
 //this portion creates the cookie for each session

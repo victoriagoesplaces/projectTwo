@@ -37,6 +37,7 @@ module.exports = function (app) {
     var matchesObject = {
       matchesArray: []
     };
+  
 
     var currentUser = req.user;
 
@@ -72,7 +73,10 @@ module.exports = function (app) {
             //adds match to the user array
             if (matchCompatibility > 5) {
 
+              allUsers[i].compatibility = matchCompatibility;
+
               matchesObject.matchesArray.push(allUsers[i]);
+              //matchesObject.matchScoreArray.push(matchCompatibility);
 
             };//end match compatibility check
           };//end check to ensure user is not compared to their own survey
