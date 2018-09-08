@@ -1,6 +1,6 @@
 # Gym Buddy
 
-##Quick summary: 
+## Quick summary: 
 
 Gym Buddy is a Node.js based web application designed to help users find a gym partner. The app is currently in a proof of concept stage, and would require many more users to match users properly.
 
