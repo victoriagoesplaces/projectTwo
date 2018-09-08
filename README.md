@@ -9,12 +9,13 @@ Gym Buddy is a Node.js based web application designed to help users find a gym p
 This app was the second group project for the UCF coding Bootcamp. It matches users with similar work out habits and preferences. This app was created specifically to help people looking for gym partners.
 
 ## Contributors:   
-                - Front End: Victoria Gonzalez, and Steven Martinez
-                - Back End: Christian Sneed, and Joseph Von Edwins
+
+- Front End: Victoria Gonzalez, and Steven Martinez
+- Back End: Christian Sneed, and Joseph Von Edwins
 
 ## Getting Started: 
 
-It's best to vist the deployed Heroku site [Here](https://pacific-headland-82730.herokuapp.com/)
+It's best to visit the deployed Heroku site [Here](https://pacific-headland-82730.herokuapp.com/)
 
 ## Technologies:   
                 - Node.js
@@ -24,8 +25,8 @@ It's best to vist the deployed Heroku site [Here](https://pacific-headland-82730
                 - JavaScript
                 - Handlebars - templating engine
                 - Passport / Passport-Local - Authentication package / strategy
-                - Express-Sequelize-Session - Authentication session storage for - prepetual login
-                - Cookie-Parser - Read client side cookies for authenticatin
+                - Express-Sequelize-Session - Authentication session storage for - perpetual login
+                - Cookie-Parser - Read client side cookies for authentication
                 - Bcrypt - password hashing
 
 ## Details: 
@@ -47,4 +48,4 @@ The GitHub repository is located [Here](https://github.com/victoriagoesplaces/pr
 * Joseph Von Edwins - [joeyvon2434](https://github.com/joeyvon2434)
 * Victoria Gonzalez - [Victoriagoesplaces](https://github.com/victoriagoesplaces)
 * Christian Sneed - [CSneed7](https://github.com/CSneed7)
-* Steven Martinez - [smartinez92](hhttps://github.com/smartinez92)
+* Steven Martinez - [smartinez92](https://github.com/smartinez92)
